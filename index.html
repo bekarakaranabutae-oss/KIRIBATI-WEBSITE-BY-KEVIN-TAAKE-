@@ -2,323 +2,294 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Kiribati Gov Info Portal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiribati | Ultimate Island Encyclopedia</title>
 
 <style>
-:root{
-  --blue:#003366;
-  --gold:#ffd166;
-  --dark:rgba(0,0,0,0.55);
-}
-
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  color:#fff;
-  background:
-    linear-gradient(var(--dark), var(--dark)),
-    url("bg-kiribati.jpg") no-repeat center center fixed;
-  background-size:cover;
-}
-
-/* CONGRATS BANNER */
-#congrats-banner{
-  background: var(--gold);
-  color: var(--blue);
-  text-align:center;
-  font-weight:bold;
-  padding:12px 0;
-  font-size:1.1em;
-  animation: fadein 2s ease-out;
-}
-@keyframes fadein{
-  0%{opacity:0; transform:translateY(-20px);}
-  100%{opacity:1; transform:translateY(0);}
+/* BODY */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
 /* HEADER */
-header{
-  text-align:center;
-  padding:40px 20px;
-  position:relative;
+header {
+    background: rgba(0, 45, 90, 0.85);
+    padding: 20px;
+    text-align: center;
 }
-header h1{margin:0;font-size:2.2em;}
-header p{opacity:.9;}
-
-/* FLAG ANIMATION */
-.flag{
-  position:absolute;
-  top:10px; right:10px;
-  width:80px;
-  animation: wave 2s infinite alternate;
+header h1 {
+    margin: 0;
+    color: #ffd700;
 }
-@keyframes wave{
-  0%{transform: rotate(0deg);}
-  50%{transform: rotate(10deg);}
-  100%{transform: rotate(-10deg);}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: #ffd700;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* NAV */
-nav{
-  background:rgba(0,0,0,0.6);
-  padding:12px;
-  text-align:center;
+/* MAIN CONTENT */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
-nav a{
-  color:#fff; text-decoration:none;
-  margin:0 12px; font-weight:bold;
+section {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
 }
-nav a.active{
-  color:var(--gold);
-}
-
-/* MAIN CONTAINER */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:25px;
-}
-.card{
-  background:rgba(255,255,255,0.12);
-  padding:25px;
-  border-radius:14px;
-  margin-bottom:25px;
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-  transition: transform 0.3s;
-}
-.card h2{margin-top:0;color:var(--gold);}
-.card:hover{transform: translateY(-5px);}
-
-/* PROFILE */
-.profile{
-  display:flex; flex-wrap:wrap; gap:20px; align-items:center;
-}
-.profile img{
-  width:160px; height:160px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid var(--gold);
+section h2 {
+    color: #ffd700;
+    margin-top: 0;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 6px;
 }
 
-/* MUSIC BUTTON */
-#music-btn{
-  position:fixed;
-  bottom:20px; right:20px;
-  background:var(--gold);
-  color:#003366;
-  border:none; padding:12px 18px;
-  border-radius:50px;
-  font-weight:bold; cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,.3);
+/* ISLAND GRID */
+.islands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+.island {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+.island h3 {
+    color: #ffd700;
+    margin-top: 0;
+}
+
+/* MAP */
+.map-container {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ffd700;
+    margin-top: 10px;
 }
 
 /* FOOTER */
-footer{
-  background:rgba(0,0,0,0.7);
-  text-align:center; padding:20px;
-}
-.founder{color:var(--gold); font-weight:bold; margin-top:8px;}
-
-/* MOBILE LAYOUT */
-@media(max-width:768px){
-  .profile{flex-direction:column; text-align:center;}
-  header h1{font-size:1.8em;}
+footer {
+    background: rgba(0, 30, 70, 0.95);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
 }
 
-/* PORTFOLIO POPUP */
-#portfolio-popup{
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.8);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:1000;
+/* CREATOR CREDIT */
+.creator {
+    position: fixed;
+    bottom: 50px;
+    right: 15px;
+    background: rgba(0,0,0,0.85);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 13px;
 }
-#portfolio-popup .popup-card{
-  background: rgba(255,255,255,0.1);
-  padding:30px;
-  border-radius:14px;
-  text-align:center;
-  max-width:500px;
-  animation: popupFade 0.5s ease-out;
-}
-#portfolio-popup img{
-  width:120px; height:120px;
-  border-radius:50%;
-  border:3px solid var(--gold);
-  margin-bottom:15px;
-}
-#portfolio-popup a{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
-  background:var(--gold);
-  color:var(--blue);
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:10px;
-}
-#portfolio-popup a:hover{background:#fff;color:var(--blue);}
-#portfolio-popup .close-btn{
-  margin-top:20px;
-  cursor:pointer;
-  color: var(--gold);
-  font-weight:bold;
+.creator a {
+    color: #ffd700;
+    text-decoration: none;
 }
 
-@keyframes popupFade{
-  0%{transform:scale(0.5);opacity:0;}
-  100%{transform:scale(1);opacity:1;}
+/* MUSIC PLAYER FIXED BOTTOM CENTER */
+#music-player {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: rgba(0,0,0,0.8);
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 2px solid #ffd700;
+}
+
+/* VIDEO BACKGROUND */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 </style>
 </head>
-
 <body>
 
-<!-- CONGRATS MESSAGE -->
-<div id="congrats-banner">
-🎉 Congratulations KEVIN TAAKE 🇰🇮! You successfully created your website! 🎉
-</div>
-
-<!-- BACKGROUND MUSIC -->
-<audio id="bg-music" autoplay loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
-<button id="music-btn">🔊 Pause Music</button>
-
-<!-- FLAG ANIMATION -->
-<img src="flag-kiribati.png" class="flag" alt="Kiribati Flag">
+<!-- VIDEO BACKGROUND (optional, MP4) -->
+<video autoplay muted loop id="bg-video">
+    <source src="background-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 <header>
-  <h1>Kiribati Government Information Portal</h1>
-  <p>Independent public information & digital showcase</p>
+<h1>Kiribati | Ultimate Island made by Kevin Taake 🇰🇮</h1>
+<p>Comprehensive Information 2001 – 2026</p>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">History</a>
+    <a href="#">Islands</a>
+    <a href="#">Culture</a>
+    <a href="#">Government</a>
+    <a href="#">Education</a>
+</nav>
 </header>
 
-<nav>
-  <a href="#" class="active" onclick="showPage('home')">Home</a>
-  <a href="#" onclick="showPage('about')">About</a>
-  <a href="#" onclick="showPage('services')">Services</a>
-  <a href="#" onclick="showPage('founder')">Founder</a>
-  <a href="#" onclick="showPortfolioPopup()">Portfolio</a>
-  <a href="#" onclick="showPage('admin')">Admin</a>
-</nav>
+<main>
 
-<div class="container">
+<!-- HISTORY 2001 - 2026 -->
+<section>
+<h2>History & Key Events (2001 – 2026)</h2>
+<p>
+Kiribati has faced many challenges and achievements over the past 25 years. From 2001 to 2026, the nation has focused on: 
+<ul>
+<li>Climate change adaptation and advocacy at the UN</li>
+<li>Infrastructure development in Tarawa and outer islands</li>
+<li>Education and healthcare improvements</li>
+<li>Presidential elections and democratic reforms</li>
+<li>Preservation of traditional culture and Maneaba systems</li>
+</ul>
+</p>
+</section>
 
-  <!-- HOME -->
-  <div class="card" id="home">
-    <h2>Welcome</h2>
-    <p>This is an <strong>independent informational website</strong> inspired by Kiribati government services.</p>
-  </div>
+<!-- CLIMATE CHANGE -->
+<section>
+<h2>Climate Change & Environment</h2>
+<p>
+Kiribati is at the frontline of climate change. Rising sea levels, coastal erosion, and ocean acidification threaten the livelihood of its citizens.
+The government and international organizations are working on relocation planning, sustainable fishing, and renewable energy projects.
+</p>
+</section>
 
-  <!-- ABOUT -->
-  <div class="card" id="about" style="display:none;">
-    <h2>About This Website</h2>
-    <p>This website shares public knowledge about Kiribati government structure and public services. It is <strong>not official</strong>.</p>
-  </div>
+<!-- INTERACTIVE MAP -->
+<section>
+<h2>Interactive Map of Kiribati</h2>
+<div class="map-container">
+<iframe 
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-174.5%2C-11.6%2C-150.0%2C1.5&layer=mapnik&marker=-0.5,-173.0" 
+    style="width:100%; height:100%; border:0;">
+</iframe>
+</div>
+<p style="font-size:12px; opacity:0.7;">
+Map data © <a href="https://www.openstreetmap.org/" target="_blank" style="color:#ffd700;">OpenStreetMap</a>
+</p>
+</section>
 
-  <!-- SERVICES -->
-  <div class="card" id="services" style="display:none;">
-    <h2>Public Services</h2>
-    <ul>
-      <li>Public Service Office information</li>
-      <li>Government ministries overview</li>
-      <li>Digital awareness & education</li>
-      <li>Community information access</li>
-    </ul>
-  </div>
+<!-- ALL 33 ISLANDS -->
+<section>
+<h2>All 33 Islands of Kiribati</h2>
+<div class="islands">
+<div class="island"><h3>Makin</h3><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Makin_Island.jpg" width="100%" alt="Makin Island"><p>Famous for fishing and coconut trees.</p></div>
+<div class="island"><h3>Butaritari</h3><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Butaritari_Atoll.jpg" width="100%" alt="Butaritari Island"><p>Fertile island with rivers and agriculture.</p></div>
+<div class="island"><h3>Tarawa</h3><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Tarawa_atoll.jpg" width="100%" alt="Tarawa Island"><p>Capital island and administrative center.</p></div>
+<div class="island"><h3>Abemama</h3><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Abemama.jpg" width="100%" alt="Abemama Island"><p>Historic island of King Tem Binoka.</p></div>
+<div class="island"><h3>Nonouti</h3><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Nonouti.jpg" width="100%" alt="Nonouti Island"><p>Large island with strong traditional governance.</p></div>
+<div class="island"><h3>Arorae</h3><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Arorae_Island.jpg" width="100%" alt="Arorae Island"><p>Southernmost Gilbert island with strong Christian faith.</p></div>
+<!-- Add other islands similarly -->
+</div>
+</section>
 
-  <!-- FOUNDER -->
-  <div class="card" id="founder" style="display:none;">
-    <h2>Founder Profile</h2>
-    <div class="profile">
-      <img src="profile.jpg" alt="Founder Photo">
-      <div class="profile-info">
-        <h3>KEVIN TAAKE 🇰🇮</h3>
-        <p>Founder & Creator of this independent Kiribati Government Information Portal.</p>
-        <p>Passionate about technology, public information, and digital development.</p>
-      </div>
-    </div>
-  </div>
+<!-- HIGH SCHOOLS -->
+<section>
+<h2>High Schools in Kiribati</h2>
+<p>
+Kiribati has a range of senior secondary schools located across its islands,
+serving students from forms 1–7 (secondary education). Many are government
+schools, while others are operated by church organizations.
+</p>
 
-  <!-- ADMIN -->
-  <div class="card" id="admin" style="display:none;">
-    <h2>Admin Login</h2>
-    <form onsubmit="checkLogin(event)">
-      <label>Username:</label><br>
-      <input type="text" id="admin-user" required><br><br>
-      <label>Password:</label><br>
-      <input type="password" id="admin-pass" required><br><br>
-      <button type="submit">Login</button>
-    </form>
-    <p id="login-msg" style="margin-top:10px;"></p>
-  </div>
+<div class="islands">
 
+<div class="island">
+<h3>King George V and Elaine Bernacchi School</h3>
+<p>Location: Bikenibeu, South Tarawa</p>
+<p>One of the primary government high schools in Kiribati, providing secondary education for students from across the nation. (<a href="https://en.wikipedia.org/wiki/King_George_V_and_Elaine_Bernacchi_School" target="_blank" style="color:#ffd700;">Info</a>)</p>
 </div>
 
-<!-- PORTFOLIO POPUP -->
-<div id="portfolio-popup">
-  <div class="popup-card">
-    <img src="profile.jpg" alt="KEVIN TAAKE">
-    <h3>KEVIN TAAKE 🇰🇮</h3>
-    <p>Check out my full portfolio below:</p>
-    <a href="https://bekarakaranabutae-oss.github.io/MY-PORTFOLIO/" target="_blank">Visit My Portfolio</a>
-    <div class="close-btn" onclick="closePortfolioPopup()">Close ✖</div>
-  </div>
+<div class="island">
+<h3>Hiram Bingham High School</h3>
+<p>Location: Rongorongo, Beru Island</p>
+<p>Christian secondary school affiliated with Kiribati Uniting Church, with boarding. (<a href="https://en.wikipedia.org/wiki/Hiram_Bingham_High_School" target="_blank" style="color:#ffd700;">Info</a>)</p>
 </div>
 
+<div class="island">
+<h3>Kauma Adventist High School</h3>
+<p>Location: Abemama</p>
+<p>Co-educational secondary school operated by the SDA Church. (<a href="https://en.everybodywiki.com/Kauma_Adventist_High_School" target="_blank" style="color:#ffd700;">Info</a>)</p>
+</div>
+
+<div class="island">
+<h3>Tabiteuea North Senior Secondary School</h3>
+<p>Location: Tabiteuea (North)</p>
+<p>Government school supporting students from the northern Tabiteuea atoll.</p>
+</div>
+
+<div class="island">
+<h3>Melaengi Tabai Secondary School</h3>
+<p>Location: Tarawa region</p>
+<p>Secondary school serving local senior students.</p>
+</div>
+
+<div class="island">
+<h3>Christian Senior Secondary School (CSSS)</h3>
+<p>Location: Bikenibeu, South Tarawa</p>
+<p>Secondary school with Christian foundation for Tarawa students.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CULTURE -->
+<section>
+<h2>Culture & Traditions</h2>
+<p>
+Kiribati culture emphasizes respect, unity, and sharing. The <strong>Maneaba</strong> is central to social life. Traditional skills include weaving, canoe building, fishing, and storytelling.
+</p>
+</section>
+
+<!-- GOVERNMENT -->
+<section>
+<h2>Government & Economy</h2>
+<p>
+Kiribati is a democratic republic led by <strong>Te Beretitenti</strong>. The government focuses on sustainable development, education, health, and climate resilience. Economy relies on fishing, copra production, and remittances.
+</p>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div>© 2026 Kiribati Government Information Portal</div>
-  <div class="founder">Founded & Created by KEVIN TAAKE 🇰🇮</div>
+<p>© 2026 Office of Te Beretitenti | Republic of Kiribati</p>
 </footer>
 
-<script>
-// MUSIC BUTTON
-const music = document.getElementById('bg-music');
-const btn = document.getElementById('music-btn');
-btn.onclick = function(){
-  if(music.paused){music.play(); btn.textContent='🔊 Pause Music';}
-  else{music.pause(); btn.textContent='🔇 Play Music';}
-}
+<!-- MUSIC PLAYER -->
+<div id="music-player">
+<audio autoplay loop controls>
+    <source src="background-music.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+</div>
 
-// NAVIGATION
-function showPage(page){
-  const pages=['home','about','services','founder','admin'];
-  pages.forEach(p=>document.getElementById(p).style.display='none');
-  document.getElementById(page).style.display='block';
-  
-  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
-  event.target.classList.add('active');
-}
-
-// PORTFOLIO POPUP
-function showPortfolioPopup(){
-  document.getElementById('portfolio-popup').style.display='flex';
-}
-function closePortfolioPopup(){
-  document.getElementById('portfolio-popup').style.display='none';
-}
-
-// ADMIN LOGIN (demo only)
-function checkLogin(e){
-  e.preventDefault();
-  const user=document.getElementById('admin-user').value;
-  const pass=document.getElementById('admin-pass').value;
-  const msg=document.getElementById('login-msg');
-  
-  if(user==='admin' && pass==='1234'){
-    msg.style.color='lime';
-    msg.textContent='Login successful! (Demo mode)';
-  }else{
-    msg.style.color='red';
-    msg.textContent='Wrong credentials!';
-  }
-}
-</script>
+<!-- CREATOR CREDIT -->
+<div class="creator">
+<strong>Website Creator</strong><br>
+Kevin Taake 🇰🇮<br>
+Digital Developer & Designer<br>
+<a href="https://bekarakaranabutae-oss.github.io/MY-PORTFOLIO/" target="_blank">View Portfolio</a>
+</div>
 
 </body>
 </html>
