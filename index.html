@@ -1,294 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiribati | Ultimate Island Encyclopedia</title>
+    <meta charset="UTF-8">
+    <title>Kevin Taake</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
 
-<style>
-/* BODY */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    line-height: 1.6;
-}
+        .container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
 
-/* HEADER */
-header {
-    background: rgba(0, 45, 90, 0.85);
-    padding: 20px;
-    text-align: center;
-}
-header h1 {
-    margin: 0;
-    color: #ffd700;
-}
-nav {
-    margin-top: 10px;
-}
-nav a {
-    color: #ffd700;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
 
-/* MAIN CONTENT */
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-section {
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-}
-section h2 {
-    color: #ffd700;
-    margin-top: 0;
-    border-bottom: 2px solid #ffd700;
-    padding-bottom: 6px;
-}
+        p {
+            font-size: 1.5em;
+            line-height: 1.4;
+        }
 
-/* ISLAND GRID */
-.islands {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-top: 10px;
-}
-.island {
-    background: rgba(255,255,255,0.1);
-    padding: 15px;
-    border-radius: 10px;
-}
-.island h3 {
-    color: #ffd700;
-    margin-top: 0;
-}
-
-/* MAP */
-.map-container {
-    width: 100%;
-    height: 500px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 2px solid #ffd700;
-    margin-top: 10px;
-}
-
-/* FOOTER */
-footer {
-    background: rgba(0, 30, 70, 0.95);
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-}
-
-/* CREATOR CREDIT */
-.creator {
-    position: fixed;
-    bottom: 50px;
-    right: 15px;
-    background: rgba(0,0,0,0.85);
-    border: 2px solid #ffd700;
-    border-radius: 10px;
-    padding: 12px;
-    font-size: 13px;
-}
-.creator a {
-    color: #ffd700;
-    text-decoration: none;
-}
-
-/* MUSIC PLAYER FIXED BOTTOM CENTER */
-#music-player {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    background: rgba(0,0,0,0.8);
-    padding: 8px 12px;
-    border-radius: 12px;
-    border: 2px solid #ffd700;
-}
-
-/* VIDEO BACKGROUND */
-#bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-</style>
+        .highlight {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.8em;
+            color: #ffe066;
+        }
+    </style>
 </head>
 <body>
 
-<!-- VIDEO BACKGROUND (optional, MP4) -->
-<video autoplay muted loop id="bg-video">
-    <source src="background-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-
-<header>
-<h1>Kiribati | Ultimate Island made by Kevin Taake 🇰🇮</h1>
-<p>Comprehensive Information 2001 – 2026</p>
-<nav>
-    <a href="#">Home</a>
-    <a href="#">History</a>
-    <a href="#">Islands</a>
-    <a href="#">Culture</a>
-    <a href="#">Government</a>
-    <a href="#">Education</a>
-</nav>
-</header>
-
-<main>
-
-<!-- HISTORY 2001 - 2026 -->
-<section>
-<h2>History & Key Events (2001 – 2026)</h2>
-<p>
-Kiribati has faced many challenges and achievements over the past 25 years. From 2001 to 2026, the nation has focused on: 
-<ul>
-<li>Climate change adaptation and advocacy at the UN</li>
-<li>Infrastructure development in Tarawa and outer islands</li>
-<li>Education and healthcare improvements</li>
-<li>Presidential elections and democratic reforms</li>
-<li>Preservation of traditional culture and Maneaba systems</li>
-</ul>
-</p>
-</section>
-
-<!-- CLIMATE CHANGE -->
-<section>
-<h2>Climate Change & Environment</h2>
-<p>
-Kiribati is at the frontline of climate change. Rising sea levels, coastal erosion, and ocean acidification threaten the livelihood of its citizens.
-The government and international organizations are working on relocation planning, sustainable fishing, and renewable energy projects.
-</p>
-</section>
-
-<!-- INTERACTIVE MAP -->
-<section>
-<h2>Interactive Map of Kiribati</h2>
-<div class="map-container">
-<iframe 
-    src="https://www.openstreetmap.org/export/embed.html?bbox=-174.5%2C-11.6%2C-150.0%2C1.5&layer=mapnik&marker=-0.5,-173.0" 
-    style="width:100%; height:100%; border:0;">
-</iframe>
-</div>
-<p style="font-size:12px; opacity:0.7;">
-Map data © <a href="https://www.openstreetmap.org/" target="_blank" style="color:#ffd700;">OpenStreetMap</a>
-</p>
-</section>
-
-<!-- ALL 33 ISLANDS -->
-<section>
-<h2>All 33 Islands of Kiribati</h2>
-<div class="islands">
-<div class="island"><h3>Makin</h3><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Makin_Island.jpg" width="100%" alt="Makin Island"><p>Famous for fishing and coconut trees.</p></div>
-<div class="island"><h3>Butaritari</h3><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Butaritari_Atoll.jpg" width="100%" alt="Butaritari Island"><p>Fertile island with rivers and agriculture.</p></div>
-<div class="island"><h3>Tarawa</h3><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Tarawa_atoll.jpg" width="100%" alt="Tarawa Island"><p>Capital island and administrative center.</p></div>
-<div class="island"><h3>Abemama</h3><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Abemama.jpg" width="100%" alt="Abemama Island"><p>Historic island of King Tem Binoka.</p></div>
-<div class="island"><h3>Nonouti</h3><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Nonouti.jpg" width="100%" alt="Nonouti Island"><p>Large island with strong traditional governance.</p></div>
-<div class="island"><h3>Arorae</h3><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Arorae_Island.jpg" width="100%" alt="Arorae Island"><p>Southernmost Gilbert island with strong Christian faith.</p></div>
-<!-- Add other islands similarly -->
-</div>
-</section>
-
-<!-- HIGH SCHOOLS -->
-<section>
-<h2>High Schools in Kiribati</h2>
-<p>
-Kiribati has a range of senior secondary schools located across its islands,
-serving students from forms 1–7 (secondary education). Many are government
-schools, while others are operated by church organizations.
-</p>
-
-<div class="islands">
-
-<div class="island">
-<h3>King George V and Elaine Bernacchi School</h3>
-<p>Location: Bikenibeu, South Tarawa</p>
-<p>One of the primary government high schools in Kiribati, providing secondary education for students from across the nation. (<a href="https://en.wikipedia.org/wiki/King_George_V_and_Elaine_Bernacchi_School" target="_blank" style="color:#ffd700;">Info</a>)</p>
-</div>
-
-<div class="island">
-<h3>Hiram Bingham High School</h3>
-<p>Location: Rongorongo, Beru Island</p>
-<p>Christian secondary school affiliated with Kiribati Uniting Church, with boarding. (<a href="https://en.wikipedia.org/wiki/Hiram_Bingham_High_School" target="_blank" style="color:#ffd700;">Info</a>)</p>
-</div>
-
-<div class="island">
-<h3>Kauma Adventist High School</h3>
-<p>Location: Abemama</p>
-<p>Co-educational secondary school operated by the SDA Church. (<a href="https://en.everybodywiki.com/Kauma_Adventist_High_School" target="_blank" style="color:#ffd700;">Info</a>)</p>
-</div>
-
-<div class="island">
-<h3>Tabiteuea North Senior Secondary School</h3>
-<p>Location: Tabiteuea (North)</p>
-<p>Government school supporting students from the northern Tabiteuea atoll.</p>
-</div>
-
-<div class="island">
-<h3>Melaengi Tabai Secondary School</h3>
-<p>Location: Tarawa region</p>
-<p>Secondary school serving local senior students.</p>
-</div>
-
-<div class="island">
-<h3>Christian Senior Secondary School (CSSS)</h3>
-<p>Location: Bikenibeu, South Tarawa</p>
-<p>Secondary school with Christian foundation for Tarawa students.</p>
-</div>
-
-</div>
-</section>
-
-<!-- CULTURE -->
-<section>
-<h2>Culture & Traditions</h2>
-<p>
-Kiribati culture emphasizes respect, unity, and sharing. The <strong>Maneaba</strong> is central to social life. Traditional skills include weaving, canoe building, fishing, and storytelling.
-</p>
-</section>
-
-<!-- GOVERNMENT -->
-<section>
-<h2>Government & Economy</h2>
-<p>
-Kiribati is a democratic republic led by <strong>Te Beretitenti</strong>. The government focuses on sustainable development, education, health, and climate resilience. Economy relies on fishing, copra production, and remittances.
-</p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Office of Te Beretitenti | Republic of Kiribati</p>
-</footer>
-
-<!-- MUSIC PLAYER -->
-<div id="music-player">
-<audio autoplay loop controls>
-    <source src="background-music.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-</audio>
-</div>
-
-<!-- CREATOR CREDIT -->
-<div class="creator">
-<strong>Website Creator</strong><br>
-Kevin Taake 🇰🇮<br>
-Digital Developer & Designer<br>
-<a href="https://bekarakaranabutae-oss.github.io/MY-PORTFOLIO/" target="_blank">View Portfolio</a>
+<div class="container">
+    <h1>Kevin Taake</h1>
+    <p class="highlight">
+        KAM NA BANE N TEKERAOI NI KABANE IMWAIN AMI EXAM
+    </p>
+    <p>Stay focused and do your best!</p>
 </div>
 
 </body>
