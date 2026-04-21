@@ -1,129 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Presidency of Kiribati</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presidency of Kiribati</title>
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center/cover;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #003f5c, #005b96);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* NAV */
+nav {
+    background: #002f4b;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero h2 {
+    font-size: 34px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* IMAGE */
+.card img {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* LIST */
+ul {
+    padding-left: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #003f5c;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px){
+    header h1 {
+        font-size: 26px;
+    }
+}
+
+</style>
 </head>
 
-<body style="margin:0; font-family:Arial, sans-serif; font-size:18px; font-weight:500;
-background-image:url('background.jpg');
-background-size:cover; background-position:center;">
+<body>
 
-<!-- HEADER -->
-<div style="background:linear-gradient(to right,#003f5c,#005b96); color:white; padding:25px; text-align:center;">
-    <h1 style="margin:0; font-size:36px; font-weight:bold;">Presidency of Kiribati</h1>
-    <p style="font-size:20px;">Official Government Portal</p>
+<header>
+    <h1>Presidency of Kiribati</h1>
+    <p>Official Government Portal</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">President</a>
+    <a href="#">Government</a>
+    <a href="#">Profile</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="hero">
+    <h2>Welcome to Kiribati Presidency</h2>
+    <p>Leadership • Unity • Progress</p>
 </div>
 
-<!-- NAV -->
-<div style="background:#002f4b; padding:12px; text-align:center;">
-    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Home</a>
-    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">President</a>
-    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Government</a>
-    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Profile</a>
-    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Contact</a>
-</div>
-
-<!-- HERO -->
-<div style="text-align:center; color:white; padding:70px;">
-    <h2 style="font-size:32px; font-weight:bold;">Welcome to Kiribati Presidency</h2>
-    <p style="font-size:20px;">Leadership • Unity • Progress</p>
-</div>
-
-<!-- MAIN -->
-<div style="max-width:900px; margin:auto; padding:20px;">
+<div class="container">
 
     <!-- PRESIDENT -->
-    <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2 style="font-size:26px; font-weight:bold;">President</h2>
-        <img src="taneti-mamau.jpg" width="200" style="border-radius:10px;">
-        <p style="font-size:18px;">
+    <div class="card">
+        <h2>President</h2>
+        <img src="taneti-mamau.jpg" width="200">
+        <p>
             His Excellency Taneti Maamau is the President of Kiribati,
             leading national development and representing the country internationally.
         </p>
     </div>
 
-    <!-- PROFILE -->
-    <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2 style="font-size:26px; font-weight:bold;">My Profile</h2>
+    <!-- GRID SECTION -->
+    <div class="grid">
 
-        <img src="your-photo.jpg" width="180" style="border-radius:10px;">
-
-        <h3 style="font-size:22px; font-weight:bold;">Kevin Taake</h3>
-        <p><strong>Country:</strong> Kiribati</p>
-
-        <p>
-            I am a citizen of Kiribati. This profile is part of the Presidency website
-            showcasing individuals and community members.
-        </p>
-
-        <p><strong>Interests:</strong> Community, Development, Technology</p>
-    </div>
-
-    <!-- RADAR -->
-    <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px; text-align:center;">
-        <h2 style="font-size:26px; font-weight:bold;">National Radar</h2>
-
-        <div style="
-            width:250px;
-            height:250px;
-            margin:auto;
-            border-radius:50%;
-            background:radial-gradient(circle, #00ff88 1%, black 60%);
-            position:relative;
-            overflow:hidden;
-        ">
-            <div style="
-                width:100%;
-                height:100%;
-                position:absolute;
-                background:conic-gradient(rgba(0,255,150,0.6), transparent 60%);
-                animation:spin 3s linear infinite;
-            "></div>
+        <!-- PROFILE -->
+        <div class="card">
+            <h2>My Profile</h2>
+            <img src="your-photo.jpg" width="150">
+            <h3>Kevin Taake</h3>
+            <p><strong>Country:</strong> Kiribati</p>
+            <p>Citizen contributing to national development.</p>
         </div>
 
-        <p>Monitoring national updates</p>
+        <!-- GOVERNMENT -->
+        <div class="card">
+            <h2>Government</h2>
+            <p>
+                Focus on sustainable development, climate resilience,
+                and improving citizens’ lives.
+            </p>
+        </div>
+
+        <!-- NEWS -->
+        <div class="card">
+            <h2>Latest News</h2>
+            <ul>
+                <li>Development plan announced</li>
+                <li>Community projects launched</li>
+                <li>Ocean protection initiatives</li>
+            </ul>
+        </div>
+
     </div>
 
-    <!-- GOVERNMENT -->
-    <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2 style="font-size:26px; font-weight:bold;">Government</h2>
-        <p>
-            The Government of Kiribati focuses on sustainable development,
-            climate resilience, and improving citizens' lives.
-        </p>
+    <!-- WEATHER -->
+    <div class="card" style="text-align:center;">
+        <h2>Live Weather Radar</h2>
+
+        <iframe 
+            width="100%" 
+            height="400"
+            src="https://embed.windy.com/embed2.html?lat=1.33&lon=172.98&zoom=5&overlay=radar"
+            frameborder="0">
+        </iframe>
+
+        <p>Real-time radar over Kiribati</p>
     </div>
 
-    <!-- NEWS -->
-    <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2 style="font-size:26px; font-weight:bold;">Latest News</h2>
-        <ul>
-            <li>President announces development plan</li>
-            <li>Community projects launched</li>
-            <li>Climate and ocean protection focus</li>
-        </ul>
+    <!-- EXTRA SECTION -->
+    <div class="grid">
+
+        <div class="card">
+            <h2>Vision</h2>
+            <p>Building a resilient and sustainable island nation.</p>
+        </div>
+
+        <div class="card">
+            <h2>Mission</h2>
+            <p>Serve citizens through effective governance and innovation.</p>
+        </div>
+
+        <div class="card">
+            <h2>Values</h2>
+            <p>Unity, Integrity, Transparency, Progress.</p>
+        </div>
+
     </div>
 
     <!-- CONTACT -->
-    <div style="background:white; padding:20px; border-radius:12px;">
-        <h2 style="font-size:26px; font-weight:bold;">Contact</h2>
+    <div class="card">
+        <h2>Contact</h2>
         <p>Email: info@presidency.ki</p>
         <p>Phone: +686 12345</p>
+        <p>Location: Tarawa, Kiribati</p>
     </div>
 
 </div>
 
-<!-- FOOTER -->
-<div style="background:#003f5c; color:white; text-align:center; padding:15px;">
-    <p>&copy; 2026 Presidency of Kiribati</p>
-</div>
+<footer>
+    <div class="footer-grid">
 
-<!-- RADAR ANIMATION -->
-<style>
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-</style>
+        <div>
+            <h3>About</h3>
+            <p>Official portal of the Presidency of Kiribati.</p>
+        </div>
+
+        <div>
+            <h3>Links</h3>
+            <p>Government</p>
+            <p>Services</p>
+            <p>Policies</p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Email: info@presidency.ki</p>
+            <p>Phone: +686 12345</p>
+        </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:20px;">
+        &copy; 2026 Presidency of Kiribati
+    </p>
+</footer>
 
 </body>
 </html>
