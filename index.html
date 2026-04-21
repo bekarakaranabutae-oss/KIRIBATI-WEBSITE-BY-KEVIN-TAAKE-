@@ -4,51 +4,51 @@
     <title>Presidency of Kiribati</title>
 </head>
 
-<body style="margin:0; font-family:Arial, sans-serif;
+<body style="margin:0; font-family:Arial, sans-serif; font-size:18px; font-weight:500;
 background-image:url('background.jpg');
 background-size:cover; background-position:center;">
 
 <!-- HEADER -->
 <div style="background:linear-gradient(to right,#003f5c,#005b96); color:white; padding:25px; text-align:center;">
-    <h1 style="margin:0;">Presidency of Kiribati</h1>
-    <p style="margin:5px;">Official Government Portal</p>
+    <h1 style="margin:0; font-size:36px; font-weight:bold;">Presidency of Kiribati</h1>
+    <p style="font-size:20px;">Official Government Portal</p>
 </div>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <div style="background:#002f4b; padding:12px; text-align:center;">
-    <a href="#" style="color:white; margin:15px;">Home</a>
-    <a href="#" style="color:white; margin:15px;">President</a>
-    <a href="#" style="color:white; margin:15px;">Government</a>
-    <a href="#" style="color:white; margin:15px;">Profile</a>
-    <a href="#" style="color:white; margin:15px;">Contact</a>
+    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Home</a>
+    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">President</a>
+    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Government</a>
+    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Profile</a>
+    <a href="#" style="color:white; margin:15px; font-size:18px; font-weight:bold;">Contact</a>
 </div>
 
 <!-- HERO -->
 <div style="text-align:center; color:white; padding:70px;">
-    <h2>Welcome to Kiribati Presidency</h2>
-    <p>Leadership • Unity • Progress</p>
+    <h2 style="font-size:32px; font-weight:bold;">Welcome to Kiribati Presidency</h2>
+    <p style="font-size:20px;">Leadership • Unity • Progress</p>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div style="max-width:900px; margin:auto; padding:20px;">
 
     <!-- PRESIDENT -->
     <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2>President</h2>
+        <h2 style="font-size:26px; font-weight:bold;">President</h2>
         <img src="taneti-mamau.jpg" width="200" style="border-radius:10px;">
-        <p>
+        <p style="font-size:18px;">
             His Excellency Taneti Maamau is the President of Kiribati,
             leading national development and representing the country internationally.
         </p>
     </div>
 
-    <!-- YOUR PROFILE -->
+    <!-- PROFILE -->
     <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2>My Profile</h2>
+        <h2 style="font-size:26px; font-weight:bold;">My Profile</h2>
 
         <img src="your-photo.jpg" width="180" style="border-radius:10px;">
 
-        <h3>Kevin Taake</h3>
+        <h3 style="font-size:22px; font-weight:bold;">Kevin Taake</h3>
         <p><strong>Country:</strong> Kiribati</p>
 
         <p>
@@ -59,28 +59,53 @@ background-size:cover; background-position:center;">
         <p><strong>Interests:</strong> Community, Development, Technology</p>
     </div>
 
+    <!-- RADAR -->
+    <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px; text-align:center;">
+        <h2 style="font-size:26px; font-weight:bold;">National Radar</h2>
+
+        <div style="
+            width:250px;
+            height:250px;
+            margin:auto;
+            border-radius:50%;
+            background:radial-gradient(circle, #00ff88 1%, black 60%);
+            position:relative;
+            overflow:hidden;
+        ">
+            <div style="
+                width:100%;
+                height:100%;
+                position:absolute;
+                background:conic-gradient(rgba(0,255,150,0.6), transparent 60%);
+                animation:spin 3s linear infinite;
+            "></div>
+        </div>
+
+        <p>Monitoring national updates</p>
+    </div>
+
     <!-- GOVERNMENT -->
     <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2>Government</h2>
+        <h2 style="font-size:26px; font-weight:bold;">Government</h2>
         <p>
             The Government of Kiribati focuses on sustainable development,
-            climate resilience, and improving the quality of life for all citizens.
+            climate resilience, and improving citizens' lives.
         </p>
     </div>
 
     <!-- NEWS -->
     <div style="background:white; padding:20px; border-radius:12px; margin-bottom:20px;">
-        <h2>Latest News</h2>
+        <h2 style="font-size:26px; font-weight:bold;">Latest News</h2>
         <ul>
-            <li>President announces new national development plan</li>
-            <li>Community projects launched across islands</li>
-            <li>Focus on ocean and climate protection</li>
+            <li>President announces development plan</li>
+            <li>Community projects launched</li>
+            <li>Climate and ocean protection focus</li>
         </ul>
     </div>
 
     <!-- CONTACT -->
     <div style="background:white; padding:20px; border-radius:12px;">
-        <h2>Contact</h2>
+        <h2 style="font-size:26px; font-weight:bold;">Contact</h2>
         <p>Email: info@presidency.ki</p>
         <p>Phone: +686 12345</p>
     </div>
@@ -88,9 +113,17 @@ background-size:cover; background-position:center;">
 </div>
 
 <!-- FOOTER -->
-<div style="background:#003f5c; color:white; text-align:center; padding:15px; margin-top:20px;">
+<div style="background:#003f5c; color:white; text-align:center; padding:15px;">
     <p>&copy; 2026 Presidency of Kiribati</p>
 </div>
+
+<!-- RADAR ANIMATION -->
+<style>
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+</style>
 
 </body>
 </html>
